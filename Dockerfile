@@ -1,9 +1,9 @@
 FROM golang:alpine
 
 RUN  apk add --update git \
- &&  go get -u github.com/v2ray/v2ray-core/... \
- &&  go install github.com/v2ray/v2ray-core/tools/build \
- &&  $GOPATH/bin/build
+ &&  go get -u v2ray.com/core/... \
+ &&  go install v2ray.com/core/tools/build \
+ &&  $GOPATH/bin/build -dir /$GOPATH/bin/v2ray
     
 ENV CONFIG_JSON=... V2ray_crt=none v2ray_key=none
 
