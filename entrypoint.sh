@@ -1,4 +1,4 @@
-cd /go/bin/v2ray-linux-64
+cd /go/bin/v2ray
 
 if [ "$v2ray_crt" != "$v2ray_key" ]; then
   echo -e "$v2ray_crt" > v2ray.crt
