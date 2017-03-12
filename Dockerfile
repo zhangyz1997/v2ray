@@ -5,7 +5,7 @@ RUN  apk add --update git \
  &&  go install github.com/v2ray/v2ray-core/tools/build \
  &&  $GOPATH/bin/build
     
-ENV CONFIG_JSON=... CERT_PEM=none KEY_PEM=none
+ENV CONFIG_JSON=... V2ray_crt=none v2ray_key=none
 
 ADD entrypoint.sh /entrypoint.sh
 
