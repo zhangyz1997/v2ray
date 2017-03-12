@@ -1,7 +1,7 @@
 FROM golang:alpine
 
 RUN  apk add --update git \
- &&  go get -u github.com/v2ray/v2ray-core \
+ &&  go get -u github.com/v2ray/v2ray-core/... \
  &&  go install github.com/v2ray/v2ray-core/tools/build \
  &&  $GOPATH/bin/build
     
