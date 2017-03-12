@@ -10,8 +10,8 @@ ENV CONFIG_JSON=... V2ray_crt=none v2ray_key=none
 
 ADD entrypoint.sh /entrypoint.sh
 
-RUN chgrp -R 0 /go/bin \
-    && chmod -R g+rwX /go/bin \
+RUN chgrp -R 0 /go/bin/v2ray \
+    && chmod -R g+rwX /go/bin/v2ray \
     && chmod +x /entrypoint.sh
 
 ENTRYPOINT  /entrypoint.sh 
