@@ -2,7 +2,7 @@ FROM alpine:3.5
 
 ARG VER=2.20.2
 
-RUN adduser --disabled-password --gid 0 --gecos "Wangyi2005" wangyi2005 \
+RUN adduser -D -G 0  wangyi2005 \
     && mkdir -mv 0775 /opt/v2ray \
     && chown -v wangyi2005:root /opt/v2ray 
     
