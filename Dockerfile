@@ -4,7 +4,11 @@ ARG VER=2.20.2
 
 RUN adduser -D -G root -h /v2ray v2ray \
     && apk add --no-cache --virtual .build-deps ca-certificates curl 
-    
+
+ADD entrypoint.sh /entrypoint.sh
+
+RUN chmod +x /entrypoint.sh
+
 USER v2ray  
 
 RUN cd /v2ray \
@@ -18,10 +22,6 @@ RUN cd /v2ray \
    
 ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none
 
-ADD entrypoint.sh /v2ray/entrypoint.sh
-
-RUN chmod +x /v2ray/entrypoint.sh
-
-ENTRYPOINT  /v2ray/entrypoint.sh 
+ENTRYPOINT  /entrypoint.sh 
 
 EXPOSE 8080
