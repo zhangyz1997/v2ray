@@ -1,7 +1,7 @@
 FROM alpine:3.5
 
 RUN \
-    apk add --no-cache curl \
+    apk add --no-cache .build-deps ca-certificates curl \
     && mkdir -p /opt/v2ray \
     && cd /opt/v2ray \
     && curl -fSL https://github.com/v2ray/v2ray-core/releases/download/v2.20.2/v2ray-linux-64.zip | unzip 
