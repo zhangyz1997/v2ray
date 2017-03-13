@@ -6,6 +6,7 @@ RUN \
     && cd /opt/v2ray \
     && curl -L -H "Cache-Control: no-cache" -o v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v2.20.2/v2ray-linux-64.zip \
     && unzip v2ray.zip v2ray \
+    && rm -rf v2ray.zip \
     && apk del .build-deps 
  
 ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none
