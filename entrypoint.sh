@@ -1,4 +1,4 @@
-cd /v2ray/v2ray-v$VER-windows-64
+cd /v2ray/v2ray-v$VER-linux-64
 
 if [ "$V2RAY_CRT" != "$V2RAY_KEY" ]; then
   echo -e "$V2RAY_CRT" > v2ray.crt
