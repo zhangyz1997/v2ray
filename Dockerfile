@@ -18,12 +18,10 @@ RUN cd /v2ray \
    
 ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none
 
-ADD entrypoint.sh /entrypoint.sh
+ADD entrypoint.sh /v2ray/entrypoint.sh
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /v2ray/entrypoint.sh
 
-USER v2ray
-
-ENTRYPOINT  /entrypoint.sh 
+ENTRYPOINT  /v2ray/entrypoint.sh 
 
 EXPOSE 8080
