@@ -14,8 +14,7 @@ RUN cd /v2ray \
     && chmod -R g+rwX /v2ray \
     && ls -l / \
     && ls -l \
-    && rm -rf v2ray.zip \
-    && apk del .build-deps 
+    && rm -rf v2ray.zip 
    
 ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none
 
