@@ -4,7 +4,7 @@ ARG VER=2.20.2
 
 RUN adduser -D -G root  wangyi2005 \
     && mkdir -mv 0775 /opt/v2ray \
-    && chown -v wangyi2005:root /opt/v2ray 
+    && chown wangyi2005:root /opt/v2ray 
     
 USER wangyi2005
 
