@@ -1,8 +1,8 @@
-cd /go/bin/v2ray
+cd /opt/v2ray
 
-if [ "$v2ray_crt" != "$v2ray_key" ]; then
-  echo -e "$v2ray_crt" > v2ray.crt
-  echo -e "$v2ray_key"  > v2ray.key
+if [ "$V2RAY_CRT" != "$V2RAY_KEY" ]; then
+  echo -e "$V2RAY_CRT" > v2ray.crt
+  echo -e "$V2RAY_KEY" > v2ray.key
   echo -e "$CONFIG_JSON" > config.json
 fi
 ./v2ray
