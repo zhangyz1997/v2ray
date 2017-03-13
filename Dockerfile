@@ -7,7 +7,10 @@ RUN adduser -D -G root -h /v2ray v2ray \
     && cd /v2ray \
     && curl -L -H "Cache-Control: no-cache" -o v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
     && unzip v2ray.zip \
-    && ls -l
+    && chgrp -R 0 /v2ray \
+    && chmod -R g+rwX /v2ray \
+    && ls -l / \
+    && ls -l \
     && rm -rf v2ray.zip \
     && apk del .build-deps 
    
