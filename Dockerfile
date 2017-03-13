@@ -7,7 +7,7 @@ RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && cd /v2ray \
  && curl -L -H "Cache-Control: no-cache" -o v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
  && unzip v2ray.zip \
- && mv /v2ray/v2ray-v$VER-linux-64/v2ray /v2ray/bin
+ && mv /v2ray/v2ray-v$VER-linux-64/v2ray /v2ray/bin/ \
  && rm -rf v2ray.zip \
  && rm /v2ray/v2ray-v$VER-linux-64 \
  && chgrp -R 0 /v2ray/bin \
