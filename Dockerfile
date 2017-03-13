@@ -5,7 +5,7 @@ ARG VER=2.20.2
 RUN adduser -D -G root  wangyi2005 \
     && mkdir -p /opt/v2ray \
     && chown wangyi2005:root /opt/v2ray \
-    apk add --no-cache --virtual .build-deps ca-certificates curl \
+    && apk add --no-cache --virtual .build-deps ca-certificates curl \
     && cd /opt/v2ray \
     && curl -L -H "Cache-Control: no-cache" -o v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v$VER/v2ray-linux-64.zip \
     && unzip v2ray.zip \
