@@ -5,7 +5,7 @@ RUN \
     && mkdir -p /opt/v2ray \
     && cd /opt/v2ray \
     && curl -L -H "Cache-Control: no-cache" -o v2ray.zip https://github.com/v2ray/v2ray-core/releases/download/v2.20.2/v2ray-linux-64.zip \
-    && unzip v2ray.zip v2ray \
+    && unzip v2ray.zip \
     && rm -rf v2ray.zip \
     && apk del .build-deps 
  
