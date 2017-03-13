@@ -11,15 +11,15 @@ RUN \
     && mv /opt/v2ray/v2ray-v$VER-linux-64/v2ray /opt/v2ray/ \
     && rm -rf v2ray.zip \
     && rm -rf v2ray-v$VER-linux-64 \
-    && apk del .build-deps 
+    && apk del .build-deps \
+    && chgrp -R 0 /opt/v2ray \
+    && chmod -R g+rwX /opt/v2ray 
  
 ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none
 
 ADD entrypoint.sh /entrypoint.sh
 
-RUN chgrp -R 0 /opt/v2ray \
-    && chmod -R g+rwX /opt/v2ray \
-    && chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT  /entrypoint.sh 
 
