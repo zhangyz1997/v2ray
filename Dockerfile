@@ -4,7 +4,7 @@ RUN \
     apk add --no-cache --virtual .build-deps ca-certificates curl \
     && mkdir -p /opt/v2ray \
     && cd /opt/v2ray \
-    && curl -fSL https://github.com/v2ray/v2ray-core/releases/download/v2.20.2/v2ray-linux-64.zip | tar xz \
+    && curl -L https://github.com/v2ray/v2ray-core/releases/download/v2.20.2/v2ray-linux-64.zip | tar xz \
     && apk del .build-deps 
  
 ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none
