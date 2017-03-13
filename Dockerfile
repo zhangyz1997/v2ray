@@ -2,8 +2,8 @@ FROM alpine:3.5
 
 ARG VER=2.20.2
 
-RUN adduser -D -G root  wangyi2005 \
-    && mkdir -p /opt/v2ray \
+RUN adduser -D -G root v2ray \
+    mkdir -p /v2ray \
     && chown wangyi2005:root /opt/v2ray \
     && apk add --no-cache --virtual .build-deps ca-certificates curl \
     && cd /opt/v2ray \
