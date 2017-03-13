@@ -1,17 +1,17 @@
-FROM golang:alpine
+FROM alpine:3.5
 
-RUN  apk add --update git \
- &&  go get -u v2ray.com/core/... \
- &&  go install v2ray.com/core/tools/build \
- &&  $GOPATH/bin/build -dir /$GOPATH/bin/v2ray \
- &&  apk del git 
+RUN \
+    apk add --no-cache curl \
+    && mkdir -p /opt/v2ray \
+    && cd /opt/v2ray \
+    && curl -fSL https://github.com/v2ray/v2ray-core/releases/download/v2.20.2/v2ray-linux-64.zip | tar xJ 
  
-ENV CONFIG_JSON=... V2ray_crt=none v2ray_key=none
+ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none
 
 ADD entrypoint.sh /entrypoint.sh
 
-RUN chgrp -R 0 /go/bin/v2ray \
-    && chmod -R g+rwX /go/bin/v2ray \
+RUN chgrp -R 0 /opt/v2ray \
+    && chmod -R g+rwX /opt/v2ray \
     && chmod +x /entrypoint.sh
 
 ENTRYPOINT  /entrypoint.sh 
