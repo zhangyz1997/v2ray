@@ -12,8 +12,8 @@ RUN \
     && rm -rf v2ray.zip \
     && rm -rf v2ray-v$VER-linux-64 \
     && apk del .build-deps \
-    && chgrp -R 0 /opt/v2ray \
-    && chmod -R g+rwX /opt/v2ray 
+    && chgrp -Rv 0 /opt/v2ray \
+    && chmod -Rv g+rwX /opt/v2ray 
  
 ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none
 
