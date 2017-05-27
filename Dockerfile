@@ -1,6 +1,6 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
-ENV CONFIG_JSON=none V2RAY_CRT=none V2RAY_KEY=none VER=2.20.2
+ENV CONFIG_JSON=none VER=2.29
 
 RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && mkdir -m 777 /v2raybin \ 
@@ -12,9 +12,8 @@ RUN apk add --no-cache --virtual .build-deps ca-certificates curl \
  && rm -rf v2ray.zip \
  && rm -rf v2ray-v$VER-linux-64 \
  && chgrp -R 0 /v2raybin \
- && chmod -R g+rwX /v2raybin \
- && ls -l / \
- && ls -l /v2raybin 
+ && chmod -R g+rwX /v2raybin 
+ 
  
 ADD entrypoint.sh /entrypoint.sh
 
