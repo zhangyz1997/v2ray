@@ -2,7 +2,7 @@
 
 Docker 镜像：wangyi2005/v2ray
 
-环境变量： CONFIG_JSON，用notepad++将配置文件中 \r\n 替换为\\n，变成一行，导入容器。
+环境变量： CONFIG_JSON，用notepad++将配置文件中 \r\n 替换为\\\n，变成一行，导入容器。
 
 openshift Secure Route mode：edge
 
