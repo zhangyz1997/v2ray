@@ -8,12 +8,8 @@ openshift Secure Route mode：edge
 
 安卓手机、pc可用同一个服务端。
 
-PC端用http代理，域名远程解析，配置dns hosts sniproxy ，路由策略 AsIs。
+PC端用http代理，域名远程解析，路由策略 AsIs。
 
 Android 用socks代理，本地域名解析，配置dns hosts 和 server 8.8.8.8，路由策略IPIfNonMatch。
-
-v2ray Outbound 用 freedom UseIP 启用 DNS，outboundDetour 作为 proxy。
-
-v2ray 路由设置一个缺省路由，指向 proxy。
 
 具体配置见 issues。
