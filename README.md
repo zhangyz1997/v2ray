@@ -8,8 +8,4 @@ openshift Secure Route mode：edge
 
 安卓手机、pc可用同一个服务端。
 
-PC端用http代理，域名远程解析，路由策略 AsIs。
-
-Android 用socks代理，本地域名解析，配置dns hosts 和 server 8.8.8.8，路由策略IPIfNonMatch。
-
 具体配置见 issues。
