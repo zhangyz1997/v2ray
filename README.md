@@ -6,6 +6,6 @@ Docker 镜像：wangyi2005/v2ray
 
 openshift Secure Route mode：edge
 
-安卓手机、pc可用同一个服务端。
+android V2rayGO、windows客户端可用同一个服务端。
 
 具体配置见 issues。
